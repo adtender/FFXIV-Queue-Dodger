@@ -24,14 +24,12 @@ Process Exist, ffxiv_dx11.exe
 ProcessId := ErrorLevel
 if (!ProcessId and quickLauncher = 1) ; QuickLauncher conditional
 {
-    MsgBox FFXIV is not running. Launching.
 	Run C:\Users\WMPCw\AppData\Local\XIVLauncher\XIVLauncher.exe    ; Change to your location
     Sleep 5000
 }
 
 if (!ProcessId and quickLauncher = 0) ; Original Launcher conditional, Change Password-Text-Here to your password
 {
-	MsgBox FFXIV is not running. Launching.
 	Run C:\FFXIV\FINAL FANTASY XIV - A Realm Reborn\boot\ffxivboot.exe    ; Change to your location
     Sleep 10000
 	WinActivate ahk_exe ffxivlauncher.exe
