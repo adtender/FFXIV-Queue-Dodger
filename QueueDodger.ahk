@@ -89,11 +89,6 @@ F3::
 		ControlSend, , {Blind}{Numpad0}, ahk_exe ffxiv_dx11.exe ; Three is the minimum number of actions for it to work continuously with mouse movement
 		BlockInput MouseMoveOff 
 		Sleep 1000
-		If (!ProcessId)
-		{
-			Run C:\Users\WMPCw\AppData\Local\XIVLauncher\XIVLauncher.exe
-			Sleep 10000
-		}
 		If (!ProcessId and quickLauncher = 1) ; QuickLauncher conditional
 		{
 			Run C:\Users\WMPCw\AppData\Local\XIVLauncher\XIVLauncher.exe    ; Change to your location
