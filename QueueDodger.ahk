@@ -83,19 +83,23 @@ F3::
 	Loop{
 		Process Exist, ffxiv_dx11.exe
 		ProcessId := ErrorLevel
+		Process Exist, XIVLauncher.exe
+		QLauncherProcessId := ErrorLevel
+		Process Exist, ffxivlauncher.exe
+		OLauncherProcessId := ErrorLevel
 		BlockInput MouseMove ; Block mouse movements for a fraction of a section to send inputs since mouse movement will switch back to M+K/B setup
 		ControlSend, , {Blind}{Numpad0}, ahk_exe ffxiv_dx11.exe
 		ControlSend, , {Blind}{Numpad0}, ahk_exe ffxiv_dx11.exe
 		ControlSend, , {Blind}{Numpad0}, ahk_exe ffxiv_dx11.exe ; Three is the minimum number of actions for it to work continuously with mouse movement
 		BlockInput MouseMoveOff 
 		Sleep 1000
-		If (!ProcessId and quickLauncher = 1) ; QuickLauncher conditional
+		If (!ProcessId and quickLauncher = 1 and !QLauncherProcessId) ; QuickLauncher conditional
 		{
 			Run C:\Users\WMPCw\AppData\Local\XIVLauncher\XIVLauncher.exe    ; Change to your location
 			Sleep 10000
 		}
 
-		If (!ProcessId and quickLauncher = 0) ; Original Launcher conditional, Change Password-Text-Here to your password
+		If (!ProcessId and quickLauncher = 0 and !OLauncherProcessId) ; Original Launcher conditional, Change Password-Text-Here to your password
 		{
 			Run C:\FFXIV\FINAL FANTASY XIV - A Realm Reborn\boot\ffxivboot.exe    ; Change to your location
 			Sleep 10000
