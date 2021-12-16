@@ -9,6 +9,8 @@ Requires AutoHotKey
 
 <h3> This script will not run with two factor authentication!</h3>
 
+Logitech G Hub is also known to make FFXIV not close entirely after exiting. Please turn it off to avoid any issues if applicable.
+
 <h2>Commands</h2>
 F3 to toggle on
 <br>
